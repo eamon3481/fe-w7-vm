@@ -1,6 +1,4 @@
 const path = require("path");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   mode: "development",
@@ -20,12 +18,13 @@ module.exports = {
         },
       },
       {
-        test: /\.(sc|c)ss$/,
+        test: /\.sass$/,
         use: [
           "style-loader", // creates style nodes from JS strings
           "css-loader", // translates CSS into CommonJS
           "sass-loader", // compiles Sass to CSS, using Node Sass by default
         ],
+        exclude: /node_modules/,
       },
     ],
   },
