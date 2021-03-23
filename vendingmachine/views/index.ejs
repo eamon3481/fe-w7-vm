@@ -1,20 +1,28 @@
 <!DOCTYPE html>
 <html>
+  <head>
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+  </head>
 
-<head>
-  <title>
-    <%= title %>
-  </title>
-  <link rel='stylesheet' href='/stylesheets/style.css' />
-</head>
-
-<body>
-  <h1>
-    <%= title %>
-  </h1>
-  <p>Welcome to <%= title %>
-  </p>
-  <script src="./dist/bundle.js"></script>
-</body>
-
+  <body>
+    <header>
+      <div>상품화면</div>
+      <div>진행화면</div>
+      <div>지갑화면</div>
+    </header>
+    <main>
+      <section class="section__products"></section>
+      <section class="section__controller">
+        <div class="controller__total"></div>
+        <button class="controller__reset">반환</button>
+        <div class="controller__log"></div>
+      </section>
+      <section class="section__wallet">
+        <ul class="wallet__coins"></ul>
+        <div class="wallet__total"></div>
+      </section>
+    </main>
+    <script src="./dist/bundle.js"></script>
+  </body>
 </html>

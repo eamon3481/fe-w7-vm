@@ -1,8 +1,9 @@
+import ProductView from "./productView.js";
+import WalletView from "./walletView.js";
+import _ from "./util.js";
 
-window.addEventListener("DOMContentLoaded", () => {
-  const targetEl = document.querySelector("p");
+const productDiv = _.$(".section__products");
+const walletDiv = _.$(".wallet__coins");
 
-  const datalist = [1, 2, 3, 4, [5, 6, [7]]];
-
-  targetEl.innerHTML += `datalist is ${subHtml}`;
-});
+new ProductView(productDiv);
+new WalletView(walletDiv);
