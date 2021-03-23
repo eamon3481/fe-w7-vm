@@ -1,4 +1,3 @@
-import ProductView from "./productView.js";
 import WalletView from "./walletView.js";
 import _ from "./util.js";
 import product from "./product.js";
