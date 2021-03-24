@@ -6,12 +6,6 @@ export default class WalletModel extends Observable {
     this.walletData = { coin: data, total: 0 };
   }
 
-  getTotalMoney() {
-    return this.walletData.coin.reduce(
-      (acc, cur) => (acc += cur.unit * cur.cnt),
-      0
-    );
-  }
 
   insertCoin(data) {
     let selectCoin = this.walletData.coin.find((v) => v.unit === Number(data));
