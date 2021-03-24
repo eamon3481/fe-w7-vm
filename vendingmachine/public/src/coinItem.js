@@ -7,6 +7,9 @@ class coinItem {
   init() {
     this.render();
   }
+  update() {
+    this.parent.innerHTML = "";
+  }
   render() {
     this.parent.innerHTML += this.makeCoinTemplate();
   }

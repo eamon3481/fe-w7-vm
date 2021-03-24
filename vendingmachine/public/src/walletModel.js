@@ -5,6 +5,7 @@ export default class WalletModel extends Observable {
     super();
     this.walletData = { coin: data, total: 0 };
   }
+
   getTotalMoney() {
     return this.walletData.coin.reduce(
       (acc, cur) => (acc += cur.unit * cur.cnt),

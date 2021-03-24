@@ -1,5 +1,5 @@
 export default class InsertMoneyView {
-  constructor(parent, walletModel) {
+  constructor(walletModel, parent) {
     this.walletModel = walletModel;
     this.parent = parent;
     this.init();

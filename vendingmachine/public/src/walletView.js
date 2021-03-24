@@ -1,15 +1,26 @@
-import coin from "./coin.js";
 import CoinItem from "./coinItem.js";
-import WalletModel from "./walletModel.js";
 import _ from "./util.js";
-import InsertMoneyView from "./insertMoneyView.js";
 
 export default class WalletView {
-  constructor(walletDiv) {
-    coin.forEach((c) => new CoinItem(c.unit, c.cnt, walletDiv).init());
-    this.WalletModel = new WalletModel(coin);
-    new InsertMoneyView(_.$(".controller__total"), this.WalletModel).init();
-    this.onClickEvent(walletDiv);
+  constructor(walletModel, parent) {
+    this.walletModel = walletModel;
+    this.parent = parent;
+    this.init();
+  }
+
+  init() {
+    this.renderCoinItem(this.walletModel.walletData);
+    this.walletModel.subscribe((data) => this.updateCoinItem(data));
+    this.onClickEvent(this.parent);
+  }
+
+  renderCoinItem(wallet) {
+    wallet.coin.forEach((c) => new CoinItem(c.unit, c.cnt, this.parent).init());
+  }
+
+  updateCoinItem(wallet) {
+    this.parent.innerHTML = "";
+    wallet.coin.forEach((c) => new CoinItem(c.unit, c.cnt, this.parent).init());
   }
 
   onClickEvent(parents) {
@@ -17,6 +28,6 @@ export default class WalletView {
   }
 
   clickHandler(target) {
-    this.WalletModel.insertCoin(target.className);
+    this.walletModel.insertCoin(target.className);
   }
 }
