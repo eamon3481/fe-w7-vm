@@ -9,8 +9,6 @@ const walletDiv = _.$(".wallet__coins");
 
 new WalletView(walletDiv);
 
-let itemList = [];
-
-product.forEach((p) => itemList.push(new Item(p.name, p.price, p.count)));
+const itemList = product.map((p) => new Item(p.name, p.price, p.count));
 
 new ListView(itemList, productDiv);

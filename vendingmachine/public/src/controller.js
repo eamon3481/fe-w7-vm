@@ -4,10 +4,10 @@ export default class Controller {
     this.init();
   }
   init() {
-    this.changeItemCount(this.data);
+    this.reduceItemCount(this.data);
   }
 
-  changeItemCount(data) {
+  reduceItemCount(data) {
     data.count -= 1;
   }
 }
