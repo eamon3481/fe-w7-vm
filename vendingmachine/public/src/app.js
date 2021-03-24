@@ -4,8 +4,10 @@ import product from "./product.js";
 import Item from "./item.js";
 import ListView from "./listView.js";
 
+
 const productDiv = _.$(".section__products");
 const walletDiv = _.$(".wallet__coins");
+
 
 new WalletView(walletDiv);
 
