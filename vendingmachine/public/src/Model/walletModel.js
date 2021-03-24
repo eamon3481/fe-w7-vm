@@ -11,6 +11,6 @@ export default class WalletModel extends Observable {
     let selectCoin = this.walletData.coin.find((v) => v.unit === Number(data));
     selectCoin.cnt--;
     this.walletData.total += selectCoin.unit;
-    this.notify(this.walletData);
+    this.notify([this.walletData, selectCoin]);
   }
 }

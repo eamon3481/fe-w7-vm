@@ -1,10 +1,9 @@
 import ItemView from "./itemView.js";
-import Controller from "./controller.js";
-import _ from "./util.js";
+import Controller from "../Model/controller.js";
+import _ from "../util.js";
 
 class ListView {
   constructor(data, parent) {
-    //this.render(data);
     this.data = data;
     this.parent = parent;
     this.init();
