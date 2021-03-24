@@ -28,7 +28,7 @@ class ListView {
     }
   }
   checkData(data, selectName) {
-    return data.filter((item) => item.name === selectName)[0];
+    return data.find((item) => item.name === selectName);
   }
 }
 export default ListView;
