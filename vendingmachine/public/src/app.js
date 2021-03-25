@@ -4,7 +4,7 @@ import coin from "./coin.js";
 import WalletView from "./View/walletView.js";
 import LogView from "./View/LogView.js";
 import Item from "./Model/item.js";
-import ListView from "./View/listView.js";
+import ProductView from "./View/productView.js";
 import WalletModel from "./Model/walletModel.js";
 
 const productDiv = _.$(".section__products");
@@ -17,4 +17,4 @@ new LogView(walletModel, controllerDiv);
 
 const itemList = product.map((p) => new Item(p.name, p.price, p.count));
 
-new ListView(itemList, productDiv);
+new ProductView(productDiv);

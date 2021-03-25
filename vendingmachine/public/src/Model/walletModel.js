@@ -6,7 +6,6 @@ export default class WalletModel extends Observable {
     this.walletData = { coin: data, total: 0 };
   }
 
-
   insertCoin(data) {
     let selectCoin = this.walletData.coin.find((v) => v.unit === Number(data));
     selectCoin.cnt--;
