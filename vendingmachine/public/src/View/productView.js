@@ -1,17 +1,14 @@
 import ItemView from "./itemView.js";
 import product from "../product.js";
-import coin from "../coin.js";
-import ProductModel from "../Model/productModel.js";
-import WalletModel from "../Model/walletModel.js";
 import _ from "../util.js";
 
 export default class ProductView {
-  constructor(parent) {
+  constructor(walletModel, productModel, parent) {
     this.parent = parent;
     this.data = product;
     this.data.forEach((p) => new ItemView(p.name, p.price, this.parent).init()); //initial rendering같은 느낌
-    this.productModel = new ProductModel(product);
-    this.walletModel = new WalletModel(coin);
+    this.productModel = productModel;
+    this.walletModel = walletModel;
     this.init();
   }
 

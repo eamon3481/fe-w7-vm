@@ -45,7 +45,7 @@ export default class WalletView {
   getTotalMoney(wallet) {
     return wallet.coin.reduce((acc, cur) => (acc += cur.unit * cur.cnt), 0);
   }
- 
+
   updateCoinItem(wallet) {
     this.ul.innerHTML = "";
     this.renderCoinItem(wallet);
