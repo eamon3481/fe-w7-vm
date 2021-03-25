@@ -13,7 +13,6 @@ export default class LogView {
     this.onClickReset();
     this.walletModel.subscribe((data) => this.updateInsertCoinView(data[0]));
     this.walletModel.subscribe((data) => this.updatelogView(data[1]));
-    //this.productModel.subscribe((data) => this.updatelogView(data[1]));
   }
 
   updateInsertCoinView(data) {
@@ -21,18 +20,21 @@ export default class LogView {
   }
 
   updatelogView(data) {
-    this.LogDiv.innerHTML += this.LogViewTemplate(data);
+    this.LogViewTemplate(data).then((data) => (this.LogDiv.innerHTML += data));
   }
 
-  LogViewTemplate(data) {
+  async LogViewTemplate(data) {
     let template;
     if (typeof data === "string")
-      if (data === "reset") template = `<span>동전이 반환 되었습니다.</span>`;
-      else template = `<span>${data}를 뽑으셨습니다.</span>`;
+      if (data === "reset")
+        return (template = `<span>동전이 반환 되었습니다.</span>`);
+      else {
+        await _.delay(2000);
+        return (template = `<span>${data}를 뽑으셨습니다.</span>`);
+      }
     else {
-      template = `<span>${data.unit} 원을 넣었습니다.</span>`;
+      return (template = `<span>${data.unit} 원을 넣었습니다.</span>`);
     }
-    return template;
   }
 
   onClickReset() {

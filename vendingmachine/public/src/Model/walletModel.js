@@ -30,7 +30,6 @@ export default class WalletModel extends Observable {
     this.distributeCoin();
     let selectCoin = "reset";
     this.notify([this.walletData, selectCoin]);
-    //한번짜봤습니다.. ㅎㅎ 될지는 몰라용
   }
 
   buy(price, name) {

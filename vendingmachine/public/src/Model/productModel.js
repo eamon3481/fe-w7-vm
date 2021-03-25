@@ -8,7 +8,6 @@ export default class ProductModel extends Observable {
 
   selectProduct(selectName) {
     this.reduceItemCount(this.checkData(selectName));
-    // this.notify([this.productData, this.checkData(selectName).name]);
   }
 
   checkData(selectName) {
@@ -17,5 +16,9 @@ export default class ProductModel extends Observable {
 
   reduceItemCount(data) {
     data.count--;
+    if (data.count <= 0) {
+      data.available = false;
+      this.notify(this.productData);
+    }
   }
 }

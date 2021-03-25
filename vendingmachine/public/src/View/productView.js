@@ -6,7 +6,7 @@ export default class ProductView {
   constructor(walletModel, productModel, parent) {
     this.parent = parent;
     this.data = product;
-    this.render();
+    this.render(product);
     this.productModel = productModel;
     this.walletModel = walletModel;
     this.init();
@@ -14,22 +14,24 @@ export default class ProductView {
 
   init() {
     this.onClickProduct();
-    // this.productModel.subscribe((pdata) => this.updateView(pdata));
     this.walletModel.subscribe((wdata) => this.updateView(wdata[0]));
+    this.productModel.subscribe((pdata) => this.render(pdata));
   }
 
   updateView(data) {
     this.productModel.productData.forEach((product) => {
-      if (product.price <= data.total) product.available = true;
+      if (product.price <= data.total && product.count > 0)
+        product.available = true;
     });
-    this.render();
+
+    this.render(this.data);
   }
 
-  render() {
+  render(data) {
     this.parent.innerHTML = "";
-    this.data.forEach((p) =>
+    data.forEach((p) =>
       new ItemView(p.name, p.price, p.available, this.parent).init()
-    ); //initial rendering같은 느낌
+    );
   }
 
   onClickProduct() {
