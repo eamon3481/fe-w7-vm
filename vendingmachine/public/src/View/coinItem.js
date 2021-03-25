@@ -15,7 +15,7 @@ class coinItem {
   }
   makeCoinTemplate() {
     return `<li>
-    <div class="${this.unit}">${this.unit}원</div>
+    <button class="${this.unit}">${this.unit}원</button>
     <div>${this.cnt}개</div>
     </li>`;
   }

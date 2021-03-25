@@ -13,7 +13,7 @@ export default class LogView {
     this.onClickReset();
     this.walletModel.subscribe((data) => this.updateInsertCoinView(data[0]));
     this.walletModel.subscribe((data) => this.updatelogView(data[1]));
-    this.productModel.subscribe((data) => this.updatelogView(data[1]));
+    //this.productModel.subscribe((data) => this.updatelogView(data[1]));
   }
 
   updateInsertCoinView(data) {

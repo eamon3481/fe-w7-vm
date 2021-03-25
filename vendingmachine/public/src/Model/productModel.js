@@ -7,9 +7,8 @@ export default class ProductModel extends Observable {
   }
 
   selectProduct(selectName) {
-    //제품버튼이 클릭돼서 그 제품이 뽑혔을때? 나타나야하는것들.. 재고가 줄어든다, log에 출력, insert total coin 줄어든다
     this.reduceItemCount(this.checkData(selectName));
-    this.notify([this.productData, this.checkData(selectName).name]);
+    // this.notify([this.productData, this.checkData(selectName).name]);
   }
 
   checkData(selectName) {

@@ -56,6 +56,7 @@ export default class WalletView {
   }
 
   clickHandler(target) {
+    if (target.tagName !== "BUTTON") return;
     this.walletModel.insertCoin(target.className);
   }
 }
