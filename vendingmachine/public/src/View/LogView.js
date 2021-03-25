@@ -20,7 +20,9 @@ export default class LogView {
   }
 
   updatelogView(data) {
-    this.LogViewTemplate(data).then((data) => (this.LogDiv.innerHTML += data));
+    this.LogViewTemplate(data)
+      .then((data) => (this.LogDiv.innerHTML += data))
+      .then((this.LogDiv.scrollTop = this.LogDiv.scrollHeight + "10px"));
   }
 
   async LogViewTemplate(data) {
