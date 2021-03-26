@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "heroku-postbuild": "webpack -w"
+    "build": "webpack -w"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
