@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "server:start": "node app.js",
-    "heroku-postbuild": "webpack -p",
+    "heroku-postbuild": "webpack -w",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
