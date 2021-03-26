@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "server:start": "nodemon ./bin/www",
+    "server:start": "node app.js",
     "heroku-postbuild": "webpack -p",
     "start": "nodemon ./bin/www"
   },
