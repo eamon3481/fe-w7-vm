@@ -5,7 +5,7 @@
   "scripts": {
     "server:start": "node app.js",
     "heroku-postbuild": "webpack -w",
-    "start": "nodemon ./bin/www"
+    "start": "node app.js"
   },
   "dependencies": {
     "cookie-parser": "~1.4.4",
